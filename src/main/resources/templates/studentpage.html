@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Hello Thymeleaf!</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>name</th>
+				<th>course</th>
+				<th>phoneno</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${students.empty}">
+				<td colspan="2">No Stuents Available</td>
+			</tr>
+			<tr th:each="student : ${students}">
+				<td><span th:text="${student.id}"> Title </span></td>
+				<td><span th:text="${student.name}"> Author </span></td>
+				<td><span th:text="${student.course}"> Author </span></td>
+				<td><span th:text="${student.phoneNo}"> Author </span></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
